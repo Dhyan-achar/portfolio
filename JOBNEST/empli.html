@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Manager</title>
+  <style>
+    * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f6f8;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.job-form input,
+.job-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.job-form button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.job-form button:hover {
+  background-color: #2980b9;
+}
+
+.job-list {
+  list-style: none;
+}
+
+.job-list li {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.job-list button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.job-list .danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+}
+
+button.success {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+button.danger {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+button.danger.mini {
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li><a href="#post">Post Job</a></li>
+          <li><a href="#jobs">Manage Jobs</a></li>
+          <li><a href="#apps">Applications</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section id="post" class="section">
+        <h2>Post a New Job</h2>
+        <form class="job-form">
+          <input type="text" placeholder="Job Title" required />
+          <textarea placeholder="Job Description" required></textarea>
+          <input type="text" placeholder="Location" required />
+          <input type="number" placeholder="Salary" required />
+          <button type="submit">Post Job</button>
+        </form>
+      </section>
+
+      <section id="jobs" class="section">
+        <h2>Posted Jobs</h2>
+        <ul class="job-list">
+          <li>
+            <h3>Software Management</h3>
+            <p>Location: Remote | Salary: ₹80,000</p>
+            <button>Edit</button>
+            <button class="danger">Delete</button>
+          </li>
+          <li>
+            <h3>Sales Management</h3>
+            <p>Location: New York | Salary: ₹75,000</p>
+            <button>Edit</button>
+            <button class="danger">Delete</button>
+          </li>
+        </ul>
+      </section>
+
+      <section id="apps" class="section">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+  <h2>Applications</h2>
+  <button class="danger" onclick="clearAllApplications()">Clear All</button>
+</div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Gender</th>
+              <th>Reason</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="applicationsTable">
+            <!-- Applications will be inserted here dynamically -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function loadApplications() {
+      const tableBody = document.getElementById("applicationsTable");
+      const applications = JSON.parse(localStorage.getItem("applications") || "[]");
+
+      tableBody.innerHTML = ""; // Clear old data
+
+      applications.forEach((app, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${app.name}</td>
+          <td>${app.email}</td>
+          <td>${app.contact}</td>
+          <td>${app.gender}</td>
+          <td>${app.reason}</td>
+          <td>${app.position}</td>
+          <td>${app.status}</td>
+          <td>
+            <button onclick="viewApplication(${index})">View</button>
+            <button class="success" onclick="updateStatus(${index}, 'Accepted')">Accept</button>
+            <button class="danger" onclick="updateStatus(${index}, 'Rejected')">Reject</button>
+            <button class="danger" onclick="deleteApplication(${index})">Delete</button>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function updateStatus(index, status) {
+      const applications = JSON.parse(localStorage.getItem("applications") || "[]");
+      applications[index].status = status;
+      localStorage.setItem("applications", JSON.stringify(applications));
+      loadApplications();
+    }
+
+    function viewApplication(index) {
+      const apps = JSON.parse(localStorage.getItem("applications") || "[]");
+      const app = apps[index];
+      alert(`Full Application:\n\nName: ${app.name}\nEmail: ${app.email}\nContact: ${app.contact}\nDOB: ${app.dob}\nGender: ${app.gender}\nAddress: ${app.address}\nReason: ${app.reason}\nPosition: ${app.position}`);
+    }
+
+    window.onload = loadApplications;
+
+    function deleteApplication(index) {
+  let apps = JSON.parse(localStorage.getItem("applications") || "[]");
+  apps.splice(index, 1);
+  localStorage.setItem("applications", JSON.stringify(apps));
+  loadApplications();
+}
+
+function clearAllApplications() {
+  if (confirm("Are you sure you want to delete all applications?")) {
+    localStorage.removeItem("applications");
+    loadApplications();
+  }
+}
+
+function updateStatus(index, status) {
+  const applications = JSON.parse(localStorage.getItem("applications") || "[]");
+  applications[index].status = status;
+  localStorage.setItem("applications", JSON.stringify(applications));
+  loadApplications();
+
+  if (status === "Accepted") {
+    alert(` ${applications[index].name} has been accepted for the position of ${applications[index].position}`);
+  }
+}
+
+  </script>
+</body>
+</html>

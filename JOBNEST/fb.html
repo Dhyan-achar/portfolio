@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Facebook Profile UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #e9ebee;
+    }
+
+    .profile-container {
+      width: 800px;
+      margin: 30px auto;
+      background-color: #fff;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .cover-photo {
+      width: 100%;
+      height: 200px;
+      background-image: url('cover.jpg'); /* Add your own image */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-top: -80px;
+      background-color: white;
+      object-fit: cover;
+    }
+
+    .profile-info {
+      margin-left: 20px;
+    }
+
+    .profile-info h2 {
+      margin: 0;
+      font-size: 26px;
+      color: white;
+    }
+
+    .profile-info p {
+      color: gray;
+      margin-top: 6px;
+    }
+
+    .profile-actions {
+      margin-left: auto;
+    }
+
+    .profile-actions button {
+      padding: 10px 16px;
+      background-color: #1877f2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .bio-section {
+      padding: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .bio-section h3 {
+      margin-top: 0;
+    }
+    .cover-btn {
+      padding: 20px 100px;
+      font-size: 16px;
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .cover-btn:hover {
+      background-color: #1E1F5B;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <div class="cover-photo">
+        <img src="coverpage.png" alt="cover profile" class="cover-btn">
+    </div>
+
+    <div class="profile-header">
+      <img src="logojn.png" alt="Profile Picture" class="profile-pic" />
+      <div class="profile-info">
+        <h2>jobnest_official</h2>
+        <p>@jobnest | Official page to search for job| dream for your career|<br>
+        click this link to visit the site </p>
+        <a href="file:///C:/Users/dhyan/OneDrive/Desktop/JOBNEST/index.html" class="visit"><u>Visit</u> </a>
+      </div>
+      <div class="profile-actions">
+        <button>Add friend</button>
+      </div>
+    </div>
+
+    <div class="bio-section">
+      <h3>Bio</h3>
+      <p>"Our platform boasts a vast database of job opportunities, from entry-level positions to executive roles, across various industries and locations</p>
+    </div>
+  </div>
+
+</body>
+</html>

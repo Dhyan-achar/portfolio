@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="apply.css">
+    <title>Application Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 400px; margin: auto; }
+    </style>
+</head>
+<body>
+
+    <h2 id="job-detail">Apply form here</h2>
+    
+    <form id="applyForm">
+        <input type="text" placeholder="Your Name"    required><br><br>
+        <input type="email" placeholder="Your Email" required><br><br>
+        <textarea id="Address" rows="4" placeholder="House no/Appartment" required></textarea><br><br>
+        <label>Date of Birth :  </label>
+        <input type="date" id="dob"  placeholder="Date of Birth"  required><br><br>
+        <label>Contact info :</label>
+        <input type="tel" size="20" maxlength="10" pattern="[0-9]{10}" placeholder="Please enter 10 digit contact number" required><br><br>
+        <label>Gender :</label>
+        <p>Male</p>
+        <input type="radio" id="Male" name="Gender" value="Male" required>
+        <p>Female</p>
+        <input type="radio" id="Female" name="Gender" value="Female" required>
+        <p>Other</p>
+        <input type="radio" id="Other" name="Gender" value="Other" required><br><br>
+        <label for="file">Upload updated Resume </label>
+        <input type="file" id="file" name="file" required><br><br>
+        <label for="Position">Position</label>
+      <select id="Position" name="Position" required>
+        <option value="">-- Select --</option>
+        <option value="Executive">Executive</option>
+        <option value="Management">Management</option>
+        <option value="Operational">Operational</option>
+        <option value="Administrative">Administrative</option>
+        <option value="Specialized">Specialized</option>
+      </select><br><br>
+        <textarea placeholder="Why are you a good fit?" required></textarea><br><br>
+        <button type="submit">Submit Application</button>
+    </form>
+
+   
+    <script>
+  document.getElementById('applyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const address = document.getElementById('Address').value;
+    const dob = document.getElementById('dob').value;
+    const contact = this.querySelector('input[type="tel"]').value;
+    const gender = this.querySelector('input[name="Gender"]:checked')?.value;
+    const position = this.querySelector('select[name="Position"]').value;
+    const reason = this.querySelectorAll('textarea')[1].value;
+
+    const application = {
+      name,
+      email,
+      address,
+      dob,
+      contact,
+      gender,
+      position,
+      reason,
+      status: 'Pending'
+    };
+
+    let applications = JSON.parse(localStorage.getItem('applications') || '[]');
+    applications.push(application);
+    localStorage.setItem('applications', JSON.stringify(applications));
+
+    alert('Application submitted successfully!... \nIf you want any changes apply the form again');
+    this.reset();
+    window.location.href = 'tq.html'; // Redirect to employee POV page
+  });
+</script>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

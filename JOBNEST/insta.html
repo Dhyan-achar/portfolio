@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Profile UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fafafa;
+}
+
+.profile-container {
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.top-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#username {
+  font-size: 24px;
+}
+
+.edit-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: #0096FF;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.stats {
+  margin: 15px 0;
+  display: flex;
+  gap: 20px;
+}
+
+.bio p {
+  margin: 4px 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: max-content;
+  border-radius: 2%;
+}
+
+.visit{
+    color: black;
+}
+
+.post {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.post-actions {
+  padding: 10px;
+  font-size: 18px;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  color: #222;
+}
+
+.post-actions:hover {
+  color: #e1306c; /* Instagram pink */
+}
+
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-header">
+      <img class="profile-pic" src="logojn.png" alt="Profile Picture">
+      <div class="profile-info">
+        <div class="top-row">
+          <h2 id="username">jobnest_official</h2>
+          <button class="edit-btn">Follow</button>
+        </div>
+        <div class="stats">
+          <span><strong>3</strong> posts</span>
+          <span><strong>5m</strong> followers</span>
+          <span><strong>300</strong> following</span>
+        </div>
+        <div class="bio">
+          <p><strong>JOBNEST</strong></p>
+          <p>JOB SEEKERS | HIRING PAGE| APPLY NOW  <br>
+        Our page will help the freshers to get a new job , click  below visit link to see your intrested jobs<br></p>
+        <a href="file:///C:/Users/dhyan/OneDrive/Desktop/JOBNEST/index.html" class="visit"><u>click here to visit</u> </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery">
+  <div class="post">
+    <img src="instapost.jpg" alt="Post 1">
+    <div class="post-actions">
+      ❤️ 💬 📤
+      <p>posted 2m ago</p>
+    </div>
+  </div>
+
+  <div class="post">
+    <img src="instapost2.jpg" alt="Post 2">
+    <div class="post-actions">
+      ❤️ 💬 📤
+      <p>posted 3m ago</p>
+    </div>
+  </div>
+
+  <div class="post">
+    <img src="instapost3.jpg" alt="Post 3">
+    <div class="post-actions">
+      ❤️ 💬 📤
+      <p> posted 1yr ago</p>
+    </div>
+  </div>
+</div>
+  </div>
+</body>
+</html>

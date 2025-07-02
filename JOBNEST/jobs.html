@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jobs Page</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .job-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .job-listings {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .job-card {
+            background-color: #fff;
+            padding: 20px;
+            border-left: 5px solid #007BFF;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .job-card h3 {
+            margin-top: 0;
+        }
+        .apply-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .apply-button:hover {
+            background-color: #0056b3;
+        }
+        img{
+            width: 20%;
+            height: auto;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Details</h1>
+    <!-- Content will be filled by JS -->
+     <img src="jobss.avif">
+     <img src="jobssss.png">
+     <img src="jobsssss.jpg">
+     <script>
+    // Function to get query parameters
+    function getQueryParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            company: params.get("company"),
+            jobs: params.get("jobs")
+        };
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const { company, jobs } = getQueryParams();
+
+        if (company && jobs) {
+            const display = document.createElement("div");
+            display.innerHTML = `<h2>Jobs at ${company}</h2><p><b>There are ${jobs} job(s) available.</b><br>💼 Why hunt everywhere when the right job is already here?
+
+Discover top companies, verified job listings, and real opportunities—all in one place.<br>
+
+🚀 We update jobs daily, connect you directly with recruiters, and help you apply in just one click.<br>
+
+✅ No fake listings<br>
+✅ Trusted by thousands of professionals<br>
+✅ Fast & simple application process<br>
+
+Your dream job is just a click away. Don’t miss it—start applying now!<br><br><br> 🔥 Limited Openings Message Examples<br>
+🚨 Only 2 positions left — Apply before it's too late!<br>
+
+⏳ Hurry! Applications closing soon.<br>
+
+📢 Few spots available — Stand out before it fills up!<br>
+
+💥 High demand — Apply now to get noticed!<br>
+
+🕒 Last chance to join [Company] this month!<br> <br><br>💼 Your Career Starts Here — JobNest is Where Opportunities Find You!<br>
+
+Finding a job shouldn't feel like finding a needle in a haystack. At JobNest, we connect you with real opportunities from top companies—fast, simple, and transparent.<br>
+
+✅ 100% verified listings<br>
+✅ Direct apply, no middlemen<br>
+✅ Personalized job suggestions<br>
+✅ Trusted by thousands of job seekers<br>
+
+Whether you're just starting or ready for the next big leap—JobNest is the place to be.<br>
+Don’t just search. Get hired.<br>
+
+</p>`;
+            document.body.appendChild(display);
+        } else {
+            document.body.innerHTML = "<p>No company selected.</p>";
+        }
+    });
+</script>
+
+</body>
+</html>

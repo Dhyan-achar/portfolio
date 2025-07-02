@@ -1,0 +1,986 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito&display=swap" rel="stylesheet">
+    <!--icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--swiper-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>JOBNEST - A JOB PORTAL </title>
+</head>
+<body>
+    <!--navbar-->
+    <nav class="navbar">
+        <h2 class="navbar-logo"> <a href="liemp.html"><b>JOBNEST</b></a></h2>
+        <div class="navbar-menu">
+            <a href="#jobs"><u>Jobs</u></a>
+            <a href="#Companies"><u>Companies</u></a>
+            <a href="#Support"><u>Support</u></a>
+            <a href="#blog"><u>Blogs</u></a>
+            <a href="jn.html" id="authLink"><u>Login</u></a>
+        </div>
+        <div class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const authLink = document.getElementById("authLink");
+    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+    if (isLoggedIn) {
+        // Show Logout
+        authLink.innerHTML = "<u>Logout</u>";
+        authLink.href = "#";
+        authLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            localStorage.removeItem("loggedIn");
+            location.reload(); // Refresh to update UI
+        });
+    } else {
+        // Show Login
+        authLink.innerHTML = "<u>Login</u>";
+        authLink.href = "jn.html";
+    }
+});
+
+
+</script>
+
+    <!--header-->
+    <header>
+        <h1 class="header-title">
+            FIND YOUR <br> <span>PERFECT JOB</span> <br> HERE
+        </h1>
+    </header>
+
+    <!--search-->
+    <div class="search-wrapper">
+         <div class="search-box">
+         <div class="search-card">
+                <input class="search-input" type="text" placeholder="Please enter Job title or Job field ">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </div>
+    <!--filter box-->
+    <div class="filter-box">
+        <div class="filter-dropdown">
+            <select class="filter-select" id="job-level" name="job-level">
+                <option>JOB LEVEL</option>
+                <option>ENTRY</option>
+                <option>MID-SENIOR</option>
+                <option>DIRECTOR</option>
+             </select>
+            <select class="filter-select" id="job-function" name="job-function">
+                <option>JOB FUNCTION</option>
+                <option>IT</option>
+                <option>MANAGEMENT</option>
+                <option>EDUCATION</option>
+            </select>
+            <select class="filter-select" id="employement" name="employement">
+                <option>EMPLOYEMENT TYPE</option>
+                <option>PART TIME</option>
+                <option>FULL TIME</option>
+                <option>INTERNSHIP</option>
+            </select>
+            <select class="filter-select" id="location" name="location">
+                <option>LOCATION</option>
+                <option>US</option>
+                <option>REMOTE</option>
+                <option>UK</option>
+            </select>
+            <select class="filter-select" id="education" name="education">
+                 <option>EDUCATION</option>
+                 <option>HIGH SCHOOL</option>
+                 <option>PUC</option>
+                 <option>GRADUATED</option>
+                 <option>POST GRADUATED</option>
+            </select>
+        </div>
+        <div class="filter-choosen">
+            <div class="choosen-card">
+                Remote <i class="fas fa-times-circles"></i>
+             </div>
+             <div class="choosen-card">
+                Full time <i class="fas fa-times-circles"></i> 
+            </div>
+            <div class="choosen-card">
+                Financial Tech <i class="fas fa-times-circles"></i>
+            </div>
+            <div class="choosen-card">
+                Entry Level <i class="fas fa-times-circles"></i>
+            </div>
+        </div>
+    </div>
+    <!--job listing-->
+    <section class="job-list" id="jobs">
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="oracle.jpg">
+                <div class="job-detail">
+                    <h4>Oracle</h4>
+                    <h3>Mechanical Engineer</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Feb 21 | Apply Now<br>
+                        Shifts: 6am - 11am<br>
+                                12pm - 5pm<br>
+                                5pm - 10pm<br>
+                                11pm - 3am<br>
+                        Salary for freshers: 18,300 (after 20 days incresed up to 20200)<br>
+                        Salary for experienced: 40000 - 55000( with increment of 500 rs every month) 
+                    </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 2 months ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="hp.jpg">
+                <div class="job-detail">
+                    <h4>HP</h4>
+                    <h3>Software Engineer</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | March 2 | Apply Now<br>
+                        Shifts: 10am - 4pm (Day duty)<br>
+                                5pm - 11pm (Night duty)<br>
+                        Salary for freshers: 22000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 50000 - 80000( with increment of 800 rs every month)<br>  </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 1 month ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="tata.jpg">
+                <div class="job-detail">
+                    <h4>TATA Consultancy Services</h4>
+                    <h3>Mechanical Engineer</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | April 11 | Apply Now<br>
+                        Shifts: 7am - 12pm<br>
+                                2pm - 6pm<br>
+                                6pm - 11.30pm<br>
+                        Salary for freshers: 20000 (after 20 days incresed up to 23000)<br>
+                        Salary for experienced: 40000 - 55000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 6 days ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="reliance.jpg">
+                <div class="job-detail">
+                    <h4>Reliance co. ltd</h4>
+                    <h3>Bussiness Management</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | April 15 | Apply Now<br>
+                        Shifts: 7am - 12pm<br>
+                                2pm - 6pm<br>
+                                6pm - 11.30pm<br>
+                        Salary for freshers: 20000 (after 20 days incresed up to 23000)<br>
+                        Salary for experienced: 40000 - 55000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 2 days ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="infosys.jpg">
+                <div class="job-detail">
+                    <h4>Infosys co. ltd</h4>
+                    <h3>Software Management</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | April 22 | Apply Now<br>
+                        Shifts: 7am - 12pm<br>
+                                2pm - 6pm<br>
+                                6pm - 11.30pm<br>
+                        Salary for freshers: 25000 (after 20 days incresed up to 27000)<br>
+                        Salary for experienced: 55000 - 85000( with increment of 400 rs every month) </p>
+                 </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 2 hours ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="sbi.jpg">
+                <div class="job-detail">
+                    <h4>State Bank of India</h4>
+                    <h3>Bank Management</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | May 11 | Apply Now<br>
+                        Shifts: 9am - 4pm<br>
+                        Salary for freshers: 22000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 40000 - 55000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 5 mins ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="google.jpg">
+                <div class="job-detail">
+                    <h4>Google.com</h4>
+                    <h3>Artificial Intelligence</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | May 11 | Apply Now<br>
+                       Shifts: 8am - 12pm<br>
+                                1pm - 7pm<br>
+                        Work from home shifts:<br> 7am - 9am<br>
+                                               11am - 1pm<br>
+                                               2pm - 5pm<br>
+                        Salary for freshers: 22000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 40000 - 55000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="honda.png">
+                <div class="job-detail">
+                    <h4>Honda</h4>
+                    <h3>Technical Support</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="apple.jpeg">
+                <div class="job-detail">
+                    <h4>apple</h4>
+                    <h3>Software</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="robosoftlogo.png">
+                <div class="job-detail">
+                    <h4>RoboSoft</h4>
+                    <h3>Technical Engineer</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | May 11 | Apply Now<br>
+                       Shifts: 8am - 12pm<br>
+                                1pm - 7pm<br>
+                        Work from home shifts:<br> 7am - 9am<br>
+                                               11am - 1pm<br>
+                                               2pm - 5pm<br>
+                        Salary for freshers: 22000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 40000 - 55000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="nvidialogo.png">
+                <div class="job-detail">
+                    <h4>Nvidia</h4>
+                    <h3>Product Management</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | May 11 | Apply Now<br>
+                       Shifts: 8am - 12pm<br>
+                                1pm - 7pm<br>
+                        Work from home shifts:<br> 7am - 9am<br>
+                                               11am - 1pm<br>
+                                               2pm - 5pm<br>
+                        Salary for freshers: 22000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 40000 - 55000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="geminilogo.png">
+                <div class="job-detail">
+                    <h4>Gemini</h4>
+                    <h3>Artificial Intelligence</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="flipkartlogo.jpg">
+                <div class="job-detail">
+                    <h4>Flipkart</h4>
+                    <h3>Sale Management</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="bajajlogo.png">
+                <div class="job-detail">
+                    <h4>Bajaj</h4>
+                    <h3>Sale Management</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="tvslogo.jpg">
+                <div class="job-detail">
+                    <h4>TVS</h4>
+                    <h3>Sale Management</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="delllogo.png">
+                <div class="job-detail">
+                    <h4>DELL</h4>
+                    <h3>Software Engineer</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="micrologo.png">
+                <div class="job-detail">
+                    <h4>MicroSoft</h4>
+                    <h3>Software Engineer</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="yamahalogo.png">
+                <div class="job-detail">
+                    <h4>Yamaha</h4>
+                    <h3>Sales Management</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="olalogo.jpg">
+                <div class="job-detail">
+                    <h4>OLA</h4>
+                    <h3>Sales and Production</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="atherlogo.png">
+                <div class="job-detail">
+                    <h4>Ather</h4>
+                    <h3>Sales Management</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="boschlogo.png">
+                <div class="job-detail">
+                    <h4>Bosch</h4>
+                    <h3>Electronics Mass Production</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="decathlon.png">
+                <div class="job-detail">
+                    <h4>Decathlon</h4>
+                    <h3>Sales Product</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="colalogo.png">
+                <div class="job-detail">
+                    <h4>COCO COLA/h4>
+                    <h3>Mass Production</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="itclogo.png">
+                <div class="job-detail">
+                    <h4>ITC</h4>
+                    <h3>Sales Product</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="exidelogo.png">
+                <div class="job-detail">
+                    <h4>Exide </h4>
+                    <h3>Sales Product</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="costcologo.png">
+                <div class="job-detail">
+                    <h4>Costco </h4>
+                    <h3>Sales Product</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="toyatologo.jpeg">
+                <div class="job-detail">
+                    <h4>Toyota</h4>
+                    <h3>Sales Product</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="teslalogo.jpg">
+                <div class="job-detail">
+                    <h4>Tesla</h4>
+                    <h3>Sales Product</h3>
+                    <p>We are hiring Full time Entry level & Remote Work | Jun 11 | Apply Now<br>
+                       Shifts: 5am - 9am<br>
+                                2pm - 7pm<br>
+                        Salary for freshers: 40000 (after 20 days incresed up to 25000)<br>
+                        Salary for experienced: 80000 - 95000( with increment of 400 rs every month) </p>
+                </div>
+            </div>
+            <div class="job-label">
+                <a class="label-a" href="#">HTML</a>
+                <a class="label-b" href="#">CSS</a>
+                <a class="label-c" href="#">Javascript</a>
+            </div>
+            <div class="job-posted">
+                Posted 3 weeks ago
+            </div>
+        </div>
+        <button class="job-more">More List</button>   
+    </section>
+    <!--join-->
+    <section class="join">
+        <div class="join-detail">
+            <h1 class="section-title">LETS START YOUR NEW JOB WITH JOBNEST</h1>
+            <p>Looking forward for your new future, focus on crafting a strong online presence, tailoring your application and staying informed about the industry ,click on join button to be the member </p>
+        </div>
+        <a href="signup.html" class="join-button"><b><u>Join Now</u></b></a>
+    </section>
+    <!--featured company-->
+    <section class="featured" id="Companies">
+        <h1 class="section-title">Featured Companies</h1>
+        <p>Here are the Featured Companies and available jobs you are intrested in .You and view the jobs available there and can also apply for it,.. View now and Apply now..</p>
+        <div class="featured-wrapper">
+           <div class="featured-card">
+               <img class="featured-image" src="infosys.jpg">
+                <p> Infosys Tech</p>
+                <button class="featured-button">View 2 jobs</button>
+            </div>
+            <div class="featured-card">
+                <img class="featured-image" src="wipro.jpg">
+                <p> Wipro </p>
+                <button class="featured-button">View 1 jobs</button>
+            </div>
+            <div class="featured-card">
+                <img class="featured-image" src="google.jpg">
+                <p> Google</p>
+                <button class="featured-button">View 3 jobs</button>
+                </div>
+            <div class="featured-card">
+                <img class="featured-image" src="sbi.jpg">
+                <p> State Bank of India</p>
+                <button class="featured-button">View 2 jobs</button>
+            </div>
+            <div class="featured-card">
+                 <img class="featured-image" src="tata.jpg">
+                <p> Tata Consultancy Service</p>
+                <button class="featured-button">View 2 jobs</button>
+            </div>
+            <div class="featured-card">
+                <img class="featured-image" src="hp.jpg">
+                <p>HP</p>
+                <button class="featured-button">View 4 jobs</button>
+            </div>
+            <div class="featured-card">
+                <img class="featured-image" src="reliance.jpg">
+                <p> Reliance </p>
+                <button class="featured-button">View 1 jobs</button>
+            </div> 
+            <div class="featured-card">
+                <img class="featured-image" src="oracle.jpg">
+                <p> Oracle </p>
+                <button class="featured-button">View 3 jobs</button>
+            </div>
+            <div class="featured-card">
+                <img class="featured-image" src="amazon-logo-cover.png">
+                <p> Amazon </p>
+                <button class="featured-button">View 3 jobs</button>
+            </div>
+            <div class="featured-card">
+                <img class="featured-image" src="apple.jpeg">
+                <p>Apple</p>
+                <button class="featured-button">View 3 jobs</button>
+            </div>
+        </div>       
+    </section>
+    <script>
+    // Attach click event listeners after the DOM is loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        const buttons = document.querySelectorAll(".featured-button");
+        const cards = document.querySelectorAll(".featured-card");
+
+        buttons.forEach((button, index) => {
+            button.addEventListener("click", function() {
+                const companyName = cards[index].querySelector("p").innerText.trim();
+                const jobText = button.innerText.trim(); // e.g., "View 2 jobs"
+                const jobCount = jobText.match(/\d+/)?.[0] || 0;
+
+                // Redirect to jobs.html with query parameters
+                window.location.href = `jobs.html?company=${encodeURIComponent(companyName)}&jobs=${jobCount}`;
+            });
+        });
+    });
+</script>
+    <!--support-->
+    <section class="Support" id="Support">
+        <h1 class="section-title">TESTIMONIAL</h1>
+        <p>Lets see what our clients say about us</p>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <i class="fas fa-quote-left"></i>
+                    <h3>"Through personalized coaching and tailored advice, I help freshers discover new opportunities and build successful careers in business development." </h3>
+                    <div class="support-pic">
+                        <img src="BD.webp">
+                        <p>Patel</p>
+                        <span>Business Development</span>
+                        <button class="ask-button" data-name="Patel" data-position="Business Development">Ask Something</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <i class="fas fa-quote-left"></i>
+                    <h3>"Im passionate about guiding young minds in data analytics, ensuring they have the knowledge, skills, and confidence to thrive in the tech industry."</h3>
+                    <div class="support-pic">
+                        <img src="DA.webp">
+                        <p>Johnson</p>
+                        <span>Data Analyst</span>
+                        <button class="ask-button" data-name="Johnson" data-position="Data Analyst">Ask Something</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <i class="fas fa-quote-left"></i>
+                    <h3>"Every fresher deserves the chance to shine. I provide strategic support and real-world insights to help them transform their aspirations into achievements."</h3>
+                    <div class="support-pic">
+                        <img src="PA.webp">
+                        <p>George Marchel</p>
+                        <span>Product Analyst</span>
+                        <button class="ask-button" data-name="George Marchel" data-position="Product Analyst">Ask Something</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <i class="fas fa-quote-left"></i>
+                    <h3>"With years of experience in logistics and operations, I’m committed to helping freshers understand the dynamic world of logistics and guiding them towards sustainable career paths."</h3>
+                    <div class="support-pic">
+                        <img src="LD.jpeg">
+                        <p>Max Jeeshan</p>
+                        <span>Logistic Director</span>
+                        <button class="ask-button" data-name="Max Jeeshan" data-position="Logistic Director">Ask Something</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <i class="fas fa-quote-left"></i>
+                    <h3>"Marketing is about connecting ideas and people — and so is mentoring. I’m passionate about equipping freshers with the marketing skills and confidence they need to thrive in a competitive world."</h3>
+                    <div class="support-pic">
+                        <img src="MO.jpeg">
+                        <p>Robert Lasa</p>
+                        <span>Marketing Officer</span>
+                        <button class="ask-button" data-name="Robert Lasa" data-position="Marketing Officer">Ask Something</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!--blog-->
+    <section class="blog" id="blog">
+        <h1 class="section-title">Career Advices</h1>
+        <p>Learn more career tips from company's recruiter</p>
+        <div class="blog-wrapper">
+            <div class="blog-card">
+                <img class="blog-image" src="Blog1.jpg">
+                <div class="blog-detail">
+                    <span>16 May 2024</span>
+                    <h4>How to enjoy the work</h4>
+                    <p>"Transform your work into a Passion, Make Smart Work"</p>
+                    <hr class="divider">
+                    <a href="blog.html" class="blog-more">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img class="blog-image" src="Blog2.jpeg">
+                <div class="blog-detail">
+                    <span>30 May 2024</span>
+                    <h4>Tips for Technical interview</h4>
+                    <p>"Major and Top Tips to Stand out and Succeed"</p>
+                    <hr class="divider">
+                    <a href="blog2.html" class="blog-more">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img class="blog-image" src="Blog3.jpeg">
+                <div class="blog-detail">
+                    <span>20 Jul 2024</span>
+                    <h4>Time Management Effectively</h4>
+                    <p>"Smart Strategies for Effective Time Management"</p>
+                    <hr class="divider">
+                    <a href="blog3.html" class="blog-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--footer-->
+    <footer>
+        <div class="footer-wrapper">
+            <h3>JOBNEST</h3>
+            <p> "Your Dream Job Awaits.
+                At JobAct, we connect talent with opportunity. Explore thousands of jobs, get expert career advice, and take the next step toward a brighter future.
+                Start your journey with us — because your career deserves more."</p>
+            <div class="social-media">
+                <a href="insta.html"><i class="fab fa-instagram"></i></a>
+                <a href="fb.html"><i class="fab fa-facebook-f"></i></a>
+                <a href="twitter.html"><i class="fab fa-twitter"></i></a>
+                <a href="linkedin.html"><i class="fab fa-linkedin-in"></i></a>
+                <a href="youtube.html"><i class="fab fa-youtube"></i></a>
+                <a href="whatsapp.html"><i class="fab fa-whatsapp"></i></a><br><br>
+                <p>Ph_no : <u>+91 9876543210</u></p>
+            </div>
+        </div>
+        <div class="footer-wrapper">
+            <h4>Explore</h4>
+            <a href="#">Top Companies</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Podcast</a>
+            <a href="#">Careers</a>    
+        </div>
+        <div class="footer-wrapper">
+            <h4>About</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Get Inspired</a>
+            <a href="#blog">Blog</a>  
+        </div>
+        <div class="footer-wrapper">
+            <h4>Support</h4>
+            <a href="#">Customer Service</a>
+            <a href="#">Trust & Saftey</a>
+            <a href="#">Partnership</a>   
+        </div>
+        <div class="footer-wrapper">
+            <h4>Community</h4>
+            <a href="#">Community</a>
+            <a href="#">Invite a Friend</a>
+            <a href="#">Top Companies</a> 
+            <a href="#">Event</a>  
+        </div>
+    </footer>   
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.css"></script>
+    <script src="app.js"></script>
+</body>
+</html>

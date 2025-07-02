@@ -1,0 +1,104 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 800;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 800;
+}
+
+/* Heading Styling */
+h2#job-title-heading {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Form Container */
+form#applyForm {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Input and Textarea Styling */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #5b9bd5;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Textarea Resize */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+    background: #5b9bd5;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #4a8ac7;
+}
+
+/* Responsive for small screens */
+@media (max-width: 500px) {
+    form#applyForm {
+        padding: 20px 15px;
+    }
+}
+label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: gray;
+}
+
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: smaller;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    color: grey;
+}
+

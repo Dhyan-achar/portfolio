@@ -1,0 +1,62 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* Date Styling */
+p:first-of-type {
+    font-size: 0.95em;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+/* Blog Image */
+img {
+    width: 50%;
+    height: auto;
+    border-radius: 1px;
+    margin-bottom: 2px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* Content Paragraphs */
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Back Link */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+a:hover {
+    color: #1d6fa5;
+}
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ask a Question</title>
+    <link rel="stylesheet" href="testimony.css">
+</head>
+<body>
+    <h2>Ask a Question</h2>
+    <p id="suggestions"></p>
+
+    <ul id="suggested-questions"></ul>
+
+    <textarea id="question-input" placeholder="Type your question here..." rows="5" cols="40"></textarea>
+    <br>
+    <button id="submit-btn">Submit</button>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const role = params.get('role');
+
+        const suggestionsEl = document.getElementById('suggestions');
+        const questionsList = document.getElementById('suggested-questions');
+        const questionInput = document.getElementById('question-input');
+        const submitBtn = document.getElementById('submit-btn');
+
+        suggestionsEl.innerText = `You're asking a question to ${name}, a ${role}.`;
+
+        // Suggested questions by role
+        const suggestions = {
+            "Student": [
+                "What helped you stay motivated during your studies?",
+                "What challenges did you face and how did you overcome them?",
+                "Do you recommend any specific resources?"
+            ],
+            "Engineer": [
+                "What technologies do you use daily?",
+                "What advice would you give someone starting in your field?",
+                "What project are you most proud of?"
+            ],
+            "Mentor": [
+                "How do you guide your mentees?",
+                "What do you look for in a good mentee?",
+                "How can I benefit most from mentorship?"
+            ]
+        };
+
+        // Add suggested questions to page
+        const roleSuggestions = suggestions[role];
+        if (roleSuggestions) {
+            roleSuggestions.forEach(question => {
+                const li = document.createElement('li');
+                li.textContent = question;
+                questionsList.appendChild(li);
+
+                // Optional: clicking on a suggestion fills the textarea
+                li.addEventListener('click', () => {
+                    questionInput.value = question;
+                });
+            });
+        }
+
+        // Handle submit
+        submitBtn.addEventListener('click', () => {
+            const question = questionInput.value.trim();
+
+            if (!question) {
+                alert("Please enter a question before submitting.");
+                return;
+            }
+
+            // Simulate submission response
+            alert(`Your question to ${name} has been submitted!`);
+
+            // Clear the input
+            questionInput.value = '';
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
